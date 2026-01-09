@@ -271,11 +271,7 @@ main .hero-container {
   max-width: 600px;
   height: 100%;
 }
-@media (max-width: 420px) {
-  .hero-image-wrapper {
-    height: 50%;
-  }
-}
+
 .hero-image-glow {
   position: absolute;
   inset: 0;

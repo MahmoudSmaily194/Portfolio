@@ -34,7 +34,8 @@ const Hero = () => {
               className="hero-title"
               variants={titleContainer}
               initial="hidden"
-              animate="show"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
             >
               {"I'm Mahmoud".split(" ").map((word, i) => (
                 <motion.span
@@ -60,7 +61,8 @@ const Hero = () => {
               className="hero-subtitle"
               variants={fadeUp}
               initial="hidden"
-              animate="show"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
               Junior Full-Stack Developer building robust web applications from
@@ -76,7 +78,8 @@ const Hero = () => {
             className="cta-buttons"
             variants={fadeUp}
             initial="hidden"
-            animate="show"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
             <button className="btn btn-primary">
@@ -100,16 +103,18 @@ const Hero = () => {
               className="teck-title"
               variants={fadeUp}
               initial="hidden"
-              animate="show"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, delay: 1.2 }}
             >
-              <span>Teck Stack:</span>
+              <span>Tech Stack:</span>
             </motion.div>
             <motion.div
               className="hero-tech"
               variants={fadeUp}
               initial="hidden"
-              animate="show"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, delay: 1.2 }}
             >
               <div className="tech-item">
@@ -147,11 +152,14 @@ const Hero = () => {
             </motion.div>
           </div>
         </div>
+
         {/* Right Column */}
         <motion.div
           className="hero-right"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.9, delay: 0.6 }}
         >
           <div className="hero-image-wrapper">
