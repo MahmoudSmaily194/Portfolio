@@ -10,8 +10,25 @@
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
   </head>
+  <link rel="stylesheet" href="./src/index.css" />
   <body>
+    <div class="splash-screen">
+      <div class="splash_logo">
+        <span class="material-symbols-outlined">terminal</span>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Remove splash after React mounts (or after delay)
+      window.addEventListener("load", () => {
+        const splash = document.getElementById("splash");
+        if (splash) {
+          splash.style.transition = "opacity 0.5s ease";
+          splash.style.opacity = 0;
+          setTimeout(() => splash.remove(), 500);
+        }
+      });
+    </script>
   </body>
 </html>
