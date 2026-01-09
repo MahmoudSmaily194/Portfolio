@@ -35,6 +35,7 @@
   color: #0df2f2;
   box-shadow: 0 0 15px rgba(13, 242, 242, 0.1);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .logo_con:hover .logo {
@@ -90,4 +91,91 @@
 .resume:hover {
   color: #0df2f2;
   filter: drop-shadow(0 0 8px rgba(13, 242, 242, 0.5));
+}
+.menu-icon {
+  display: none;
+}
+@media (max-width: 500px) {
+  .menu-icon {
+    display: flex;
+    margin-right: 1.5rem;
+  }
+  .Navbar nav {
+    display: none;
+  }
+  .resume {
+    display: none;
+  }
+}
+/* Mobile Menu Styling */
+.mobile-menu {
+  position: fixed;
+  top: 5rem; /* right below the navbar height */
+  left: 0;
+  right: 0;
+  background-color: rgba(11, 17, 32, 0.7);
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 49;
+  animation: slideDown 0.3s ease forwards;
+}
+
+.mobile-menu-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1rem;
+  width: 60%;
+  padding: 1rem 0;
+}
+.mobile-menu-link a{
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.mobile-menu-link span {
+  color: #0df2f2; /* brand color */
+  filter: drop-shadow(0 0 8px rgba(13, 242, 242, 0.5));
+}
+
+/* Mobile menu animation */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Mobile Menu Link Hover */
+.mobile-menu-link:hover a {
+  color: #0df2f2; /* brand color */
+  text-shadow: 0 0 6px rgba(13, 242, 242, 0.7);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-link:hover span {
+  color: #0df2f2; /* brand color */
+  filter: drop-shadow(0 0 12px rgba(13, 242, 242, 0.8)) 
+          brightness(1.2);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Optional: add a background highlight on hover */
+.mobile-menu-link:hover {
+  background: rgba(13, 242, 242, 0.05); /* subtle cyan glow */
+  border-radius: 0.5rem;
+  padding-left: 1.2rem;
+  transition: all 0.3s ease;
 }
